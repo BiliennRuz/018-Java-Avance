@@ -1,0 +1,60 @@
+package fr.eni.quimper.exo.Bureau.de.vote;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import fr.eni.quimper.exo.Bureau.de.vote.bo.Electeur;
+import fr.eni.quimper.exo.Bureau.de.vote.dal.ElecteurDAO;
+
+@SpringBootApplication
+public class ExoBureauDeVoteApplication implements CommandLineRunner{
+	@Autowired
+	private ElecteurDAO dao;
+	
+	public static void main(String[] args) {
+		SpringApplication.run(ExoBureauDeVoteApplication.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		Electeur votant1 = new Electeur("AMPS", "Dominique", 44, "FR", "blanc");
+		dao.save(votant1);
+		System.out.println(votant1);
+		Electeur votant2 = new Electeur("VEUX", "Jean", 18, "FR", "blanc");
+		dao.save(votant2);
+		
+		/////////////////////////////////////////////////
+		// Afficher la liste des votants
+		System.out.println("///////////// Afficher la liste des votants : /////////////");
+		dao.findAll().forEach(System.out::println);
+		
+		/////////////////////////////////////////////////
+		// Afficher le candidat pour lequel a voté un votant en fonction de son nom et son prénom
+		String nomElecteur = "AMPS";
+		String prenomElecteur = "Dominique";
+		System.out.println("///////////// Candidat pour lequel a voté un votant : /////////////");
+		Electeur rechercheElecteur = dao.findByNomAndPrenom(nomElecteur, prenomElecteur);
+		System.out.println("LE candidat choisi par " + nomElecteur + " " + prenomElecteur + " est :");
+		System.out.println(rechercheElecteur.getCandidat());
+	}
+	
+}
+
+/*
+Faire un logiciel de vote. Le logiciel va gérer des votants
+
+Un votant ne peut voter que si :
+ Il est majeur
+ De nationalité française
+ N’a pas déjà voté
+
+Le votant n’est inséré en base de données que s’il peut voter, sinon un exception est retournée indiquant que le votant ne peut pas voter.
+ Saisir un votant (et gérer l’exception ne peut pas voter)
+ X Afficher la liste des votants
+ Afficher le candidat pour lequel a voté un votant en fonction de son nom et son prénom
+ Afficher les votants qui ont voté pour un candidat particulier
+ Afficher le nombre de vote pour un candidat.
+ Qui a gagné l’élection ?
+ */

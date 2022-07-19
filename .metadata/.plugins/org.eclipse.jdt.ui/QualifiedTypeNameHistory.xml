@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="fr.eni.contacts.bo.Contact"/>
+    <fullyQualifiedTypeName name="fr.eni.quimper.exoContactsAvecSpring.bo.Contact"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+    <fullyQualifiedTypeName name="fr.eni.quimper.exoContactsAvecSpring.bll.ContactException"/>
+    <fullyQualifiedTypeName name="fr.eni.quimper.exoContactsAvecSpring.bll.ContactManager"/>
+    <fullyQualifiedTypeName name="lombok.Data"/>
+    <fullyQualifiedTypeName name="javax.persistence.Id"/>
+    <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
+    <fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
+    <fullyQualifiedTypeName name="javax.persistence.Entity"/>
+    <fullyQualifiedTypeName name="fr.eni.quimper.exo.Bureau.de.vote.dal.ElecteurDAO"/>
+    <fullyQualifiedTypeName name="fr.eni.quimper.exo.Bureau.de.vote.bo.Electeur"/>
+    <fullyQualifiedTypeName name="java.lang.Enum"/>
+    <fullyQualifiedTypeName name="fr.eni.quimper.exo.Bureau.de.vote.bo.Candidat"/>
+</qualifiedTypeNameHistroy>

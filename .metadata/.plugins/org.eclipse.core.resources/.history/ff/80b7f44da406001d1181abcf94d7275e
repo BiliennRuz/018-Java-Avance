@@ -1,0 +1,22 @@
+package fr.eni.quimper.exoContactsAvecSpring;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import fr.eni.quimper.exoContactsAvecSpring.bo.Contact;
+
+@SpringBootApplication
+public class Application implements CommandLineRunner{
+	@Autowired
+	private Contact contact;
+	public static void main(String[] args) {
+		SpringApplication.run(Application.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		//System.out.println(calculatrice.calculate(3, 2, "+"));
+	}
+	
+}

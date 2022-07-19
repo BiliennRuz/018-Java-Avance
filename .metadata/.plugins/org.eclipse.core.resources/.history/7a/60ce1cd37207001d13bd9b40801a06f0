@@ -1,0 +1,16 @@
+package fr.eni.quimper.exo.Bureau.de.vote.bll;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
+import fr.eni.quimper.exo.Bureau.de.vote.bo.Electeur;
+
+public interface Vote {
+	public void addElecteur(Electeur e) throws VoteException;
+	public Iterable<Electeur> afficherVotants();
+	public Electeur searchCandidatToElecteur();
+	public Iterable<Electeur> searchElecteurToCandidat();
+	public Integer nbVoteToCanditat();
+	public String Winner();
+
+}
