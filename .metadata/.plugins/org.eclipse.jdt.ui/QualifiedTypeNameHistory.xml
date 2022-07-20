@@ -10,8 +10,12 @@
     <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
     <fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
     <fullyQualifiedTypeName name="javax.persistence.Entity"/>
-    <fullyQualifiedTypeName name="fr.eni.quimper.exo.Bureau.de.vote.dal.ElecteurDAO"/>
-    <fullyQualifiedTypeName name="fr.eni.quimper.exo.Bureau.de.vote.bo.Electeur"/>
     <fullyQualifiedTypeName name="java.lang.Enum"/>
     <fullyQualifiedTypeName name="fr.eni.quimper.exo.Bureau.de.vote.bo.Candidat"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="fr.eni.quimper.exo.Bureau.de.vote.dal.ElecteurDAO"/>
+    <fullyQualifiedTypeName name="fr.eni.quimper.exo.Bureau.de.vote.bll.VoteException"/>
+    <fullyQualifiedTypeName name="fr.eni.quimper.exo.Bureau.de.vote.bo.Electeur"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="fr.eni.quimper.exo.Bureau.de.vote.bll.Vote"/>
 </qualifiedTypeNameHistroy>
