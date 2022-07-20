@@ -10,8 +10,10 @@ import org.springframework.stereotype.Service;
 
 import fr.eni.quimper.exo.Bureau.de.vote.bo.Candidat;
 import fr.eni.quimper.exo.Bureau.de.vote.bo.Electeur;
+import fr.eni.quimper.exo.Bureau.de.vote.bo.Parti;
 import fr.eni.quimper.exo.Bureau.de.vote.dal.CandidatDAO;
 import fr.eni.quimper.exo.Bureau.de.vote.dal.ElecteurDAO;
+import fr.eni.quimper.exo.Bureau.de.vote.dal.PartiDAO;
 
 @Service
 class ElecteurImpl implements ElecteurManager{
@@ -20,6 +22,9 @@ class ElecteurImpl implements ElecteurManager{
 	
 	@Autowired
 	private CandidatDAO candidatDao;
+	
+	@Autowired
+	private PartiDAO partiDao;
 	
 	@Override
 	@Transactional
@@ -89,16 +94,26 @@ class ElecteurImpl implements ElecteurManager{
 	}
 
 	@Override
-	public void addCandidat(Candidat candidat) {
-		
+	public void addCandidat(Candidat candidat) {		
 		candidatDao.save(candidat);
-		
 	}
 
 	@Override
+	@Transactional
 	public Iterable<Candidat> afficherCandidats() {
 		List<Candidat> candidats = (List<Candidat>) candidatDao.findAll();
 		return candidats;
+	}
+
+	@Override
+	public Iterable<Parti> afficherPartis() {
+		List<Parti> partis = (List<Parti>) partiDao.findAll();
+		return partis;
+	}
+
+	@Override
+	public void addParti(Parti parti) {
+		partiDao.save(parti);
 	}
 	
 }

@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@NoArgsConstructor
 public class Electeur {
 	@Id
 	@GeneratedValue
@@ -21,19 +22,7 @@ public class Electeur {
 	
 	@ManyToOne
 	private Candidat candidat;
-	
-	public Electeur() {
 		
-	}
-	
-//	public Electeur(String nom, String prenom, Integer age, String nationalite, String nomCandidat) {
-//		super();
-//		this.nom = nom;
-//		this.prenom = prenom;
-//		this.age = age;
-//		this.nationalite = nationalite;
-//		//this.candidat.setNom(nomCandidat);
-//	}
 	public Electeur(String nom, String prenom, Integer age, String nationalite) {
 		super();
 		this.nom = nom;
@@ -41,13 +30,5 @@ public class Electeur {
 		this.age = age;
 		this.nationalite = nationalite;
 	}
-	
-	@Override
-	public String toString() {
-		return "Electeur [idElecteur=" + idElecteur + ", nom=" + nom + ", prenom=" + prenom + ", age=" + age
-				+ ", nationalite=" + nationalite + ", candidat=" + candidat + "]";
-	} 
-	
-	
-			
+				
 }

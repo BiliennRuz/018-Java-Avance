@@ -9,6 +9,7 @@ import fr.eni.quimper.exo.Bureau.de.vote.bll.ElecteurManager;
 import fr.eni.quimper.exo.Bureau.de.vote.bll.ElecteurException;
 import fr.eni.quimper.exo.Bureau.de.vote.bo.Candidat;
 import fr.eni.quimper.exo.Bureau.de.vote.bo.Electeur;
+import fr.eni.quimper.exo.Bureau.de.vote.bo.Parti;
 
 @SpringBootApplication
 public class ExoBureauDeVoteApplication implements CommandLineRunner{
@@ -38,13 +39,30 @@ public class ExoBureauDeVoteApplication implements CommandLineRunner{
 	
 	@Override
 	public void run(String... args) throws Exception, ElecteurException {		
+		
+		System.out.println("//////////////////////////");
+		System.out.println("//  Ajout des partis //");
+		Parti parti1 = new Parti("Les platistes");
+		electeurManager.addParti(parti1);
+		Parti parti2 = new Parti("Les respirants");
+		electeurManager.addParti(parti2);
+		Parti parti3 = new Parti("Les glandeurs");
+		electeurManager.addParti(parti3);
+		
+		System.out.println("/////////////////////////////");
+		System.out.println("//  Afficher les partis //");
+		electeurManager.afficherPartis().forEach(System.out::println);
+		
 		System.out.println("//////////////////////////");
 		System.out.println("//  Ajout des candidats //");
 		Candidat candidat1 = new Candidat("bleu");
+		candidat1.setParti(parti1);
 		electeurManager.addCandidat(candidat1);
 		Candidat candidat2 = new Candidat("blanc");
+		candidat2.setParti(parti2);
 		electeurManager.addCandidat(candidat2);
 		Candidat candidat3 = new Candidat("rouge");
+		candidat3.setParti(parti3);
 		electeurManager.addCandidat(candidat3);
 		
 		System.out.println("/////////////////////////////");
@@ -53,7 +71,7 @@ public class ExoBureauDeVoteApplication implements CommandLineRunner{
 		
 		System.out.println("////////////////////////////////////////////////////////////////");
 		System.out.println("//  Saisir un votant (et gérer l’exception ne peut pas voter) //");
-		// Test si Il est majeur
+		// Test si Il est mineur
 		System.out.println("Test si Il est mineur :");
 		Electeur votant1 = new Electeur("RAGE", "Jean", 16, "IT");
 		votant1.setCandidat(candidat1);
@@ -134,7 +152,7 @@ public class ExoBureauDeVoteApplication implements CommandLineRunner{
 		System.out.println("// Afficher le nombre de vote pour un candidat //");
 		//String candidat = "rouge";
 		Integer count = electeurManager.nbVoteToCanditat(candidat3);
-		System.out.println("Il y a " + count + " votant pour " + candidat3.getNom());
+		System.out.println("Il y a " + count + " votant pour " + candidat3.getNom() + " du parti " + candidat3.getParti().getNom());
 		
 		System.out.println("//////////////////////////////");
 		System.out.println("// Qui a gagné l’élection ? //");
