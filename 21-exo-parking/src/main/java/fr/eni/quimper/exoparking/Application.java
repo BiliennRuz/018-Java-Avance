@@ -24,22 +24,22 @@ public class Application implements CommandLineRunner{
 	@Override
 	@Transactional
 	public void run(String... args) throws Exception {
-		Parking park1 = new Parking("Quimper Chapeau rouge",80);
-		parkingManager.addParking(park1);
-		Voiture voit1 = new Voiture("Renault", "Bleue", "sd123fd");
-		Voiture voit2 = new Voiture("Tesla", "Blanche", "fghg456qs");
-		Voiture voit3 = new Voiture("Tata", "rouge", "pm789aq");
-		
-		voit1.setParking(park1);
-		parkingManager.addVoiture(voit1);
-		voit2.setParking(park1);
-		parkingManager.addVoiture(voit2);		
-		voit3.setParking(park1);
-		parkingManager.addVoiture(voit3);	
-		
-		parkingManager.displayParking().forEach(System.out::println);
-		parkingManager.displayVoiture().forEach(System.out::println);
-		
+//		Parking park1 = new Parking("Quimper Chapeau rouge",80);
+//		parkingManager.addParking(park1);
+//		Voiture voit1 = new Voiture("Renault", "Bleue", "sd123fd");
+//		Voiture voit2 = new Voiture("Tesla", "Blanche", "fghg456qs");
+//		Voiture voit3 = new Voiture("Tata", "rouge", "pm789aq");
+//		
+//		voit1.setParking(park1);
+//		parkingManager.addVoiture(voit1);
+//		voit2.setParking(park1);
+//		parkingManager.addVoiture(voit2);		
+//		voit3.setParking(park1);
+//		parkingManager.addVoiture(voit3);	
+//		
+//		parkingManager.displayParking().forEach(System.out::println);
+//		parkingManager.displayVoiture().forEach(System.out::println);
+//		
 	}
 
 }
