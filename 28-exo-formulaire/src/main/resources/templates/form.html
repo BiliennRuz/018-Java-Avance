@@ -2,19 +2,31 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <title>Mon formulaire</title>
 </head>
 <body>
 <form th:action="@{/IHM/form}" th:object="${voiture}" method="post">
-	<label for="nom">nom:</label>
-	<input type="text" th:field="*{nom}" id="nom"/>
-	<span th:if="${#fields.hasErrors('nom')}" th:errors="*{nom}"/>
-	<br>
-	<label for="marque">marque:</label>
-	<input type="text" th:field="*{marque}" id="marque"/>
-	<span th:if="${#fields.hasErrors('marque')}" th:errors="*{marque}"/>
-	<br>
-	<input type="submit" value="valider"/>
+	<div class="mb-3 mt-3">
+		<label for="nom" class="form-label">nom:</label>
+		<input type="text" class="form-control" th:field="*{nom}" id="nom"/>
+		<span th:if="${#fields.hasErrors('nom')}" th:errors="*{nom}"/>
+  </div>
+    <div class="mb-3">
+		<label for="marque" class="form-label">marque:</label>
+		<input type="text" class="form-control" th:field="*{marque}" id="marque"/>
+		<span th:if="${#fields.hasErrors('marque')}" th:errors="*{marque}"/>
+  </div>
+		<button class="btn btn-primary" type="submit" value="valider">valider</button>
 </form>
+
+
+
+
+
+
+<ul class="list-group" th:each="voiture : ${form}">
+  <li class="list-group-item"><span th:text="${voiture.nom}"/> <span th:text="${voiture.marque}"/></li>
+</ul>
 </body>
 </html>

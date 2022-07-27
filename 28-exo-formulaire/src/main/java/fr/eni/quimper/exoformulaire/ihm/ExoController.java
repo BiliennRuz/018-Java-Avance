@@ -31,6 +31,10 @@ public class ExoController {
 
 	@GetMapping("/form")
 	public String form(Voiture voiture, Model model) {
+		if (lst.isEmpty()) {
+			lst.add(new Voiture("4L","Renault"));			
+		}
+		model.addAttribute("form", lst);
 		return "form";
 	}
 	
@@ -41,7 +45,7 @@ public class ExoController {
 		}
 		System.out.println(voiture);
 		lst.add(voiture);
-		return "redirect:/IHM/list";
+		return "redirect:/IHM/form";
 	}
 	
 }
