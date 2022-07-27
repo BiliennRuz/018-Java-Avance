@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Mon formulaire</title>
+</head>
+<body>
+<form th:action="@{/IHM/form}" th:object="${voiture}" method="post">
+	<label for="nom">nom:</label>
+	<input type="text" th:field="*{nom}" id="nom"/>
+	<span th:if="${#fields.hasErrors('nom')}" th:errors="*{nom}"/>
+	<br>
+	<label for="marque">marque:</label>
+	<input type="text" th:field="*{marque}" id="marque"/>
+	<span th:if="${#fields.hasErrors('marque')}" th:errors="*{marque}"/>
+	<br>
+	<input type="submit" value="valider"/>
+</form>
+</body>
+</html>
