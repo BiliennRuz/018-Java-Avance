@@ -6,27 +6,26 @@
 <title>Mon formulaire</title>
 </head>
 <body>
-<form th:action="@{/IHM/form}" th:object="${voiture}" method="post">
-	<div class="mb-3 mt-3">
-		<label for="nom" class="form-label">nom:</label>
-		<input type="text" class="form-control" th:field="*{nom}" id="nom"/>
-		<span th:if="${#fields.hasErrors('nom')}" th:errors="*{nom}"/>
-  </div>
-    <div class="mb-3">
-		<label for="marque" class="form-label">marque:</label>
-		<input type="text" class="form-control" th:field="*{marque}" id="marque"/>
-		<span th:if="${#fields.hasErrors('marque')}" th:errors="*{marque}"/>
-  </div>
-		<button class="btn btn-primary" type="submit" value="valider">valider</button>
-</form>
+<div class="container">
 
-
-
-
-
-
-<ul class="list-group" th:each="voiture : ${form}">
-  <li class="list-group-item"><span th:text="${voiture.nom}"/> <span th:text="${voiture.marque}"/></li>
-</ul>
+	<form th:action="@{/IHM/form}" th:object="${voiture}" method="post">
+		<div class="mb-3 mt-3">
+			<label for="nom" class="form-label">nom:</label>
+			<input type="text" class="form-control" th:field="*{nom}" id="nom"/>
+			<span th:if="${#fields.hasErrors('nom')}" th:errors="*{nom}"/>
+	  </div>
+	    <div class="mb-3">
+			<label for="marque" class="form-label">marque:</label>
+			<input type="text" class="form-control" th:field="*{marque}" id="marque"/>
+			<span th:if="${#fields.hasErrors('marque')}" th:errors="*{marque}"/>
+	  </div>
+			<button class="btn btn-primary" type="submit" value="valider">valider</button>
+	</form>
+	<br>
+	<ul class="list-group" th:each="voiture : ${form}">
+	  <li class="list-group-item"><span th:text="${voiture.nom}"/> <span th:text="${voiture.marque}"/></li>
+	</ul>
+	
+</div>
 </body>
 </html>
