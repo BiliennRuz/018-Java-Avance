@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.buildship.ui.wizard.project.import">
-		<item key="project_location" value="D:\eclipse-workspace-JEE-2022\21-exo-parking"/>
+		<item key="project_location" value="D:\eclipse-workspace-JEE-2022\streamEtLambda"/>
 		<item key="apply_working_sets" value="false"/>
 		<list key="working_sets">
 		</list>

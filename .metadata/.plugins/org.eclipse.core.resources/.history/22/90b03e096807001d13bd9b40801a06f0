@@ -1,8 +1,0 @@
-package fr.eni.quimper.exo.Bureau.de.vote.bll;
-
-import fr.eni.quimper.exo.Bureau.de.vote.bo.Electeur;
-
-public interface Vote {
-	public void addElecteur(Electeur e);
-
-}
